@@ -38,6 +38,7 @@ public class WeChetAccessToken {
             if (errcode != null && "40013".equals(errcode.toString())) {
                 System.out.println("不合法的APPID");
             }
+            System.out.println("jsonObject:"+jsonObject);
             // expiration：为当前执行到此处的时间+2小时有效时间为过期时间
             WxChatCache.AccessToken.token = jsonObject.get("access_token").toString();
             WxChatCache.AccessToken.expiration = System.currentTimeMillis()+7200000;
